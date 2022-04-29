@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/style2.css">
+    <link rel="stylesheet" href="./css/sticky.css">
+    <link rel="stylesheet" href="./css/image.css">
+    <link rel="stylesheet" href="./css/hamburger.css">
+    <link rel="stylesheet" href="./css/queries.css">
+    <link rel="shortcut icon" href="./NewIcons/pep.png" type="image/x-icon">
+    <title>ChatCord App</title>
+  </head>
+  <body>
+    <div class="chat-container">
+      <header class="chat-header">
+        <h3><i class="fas fa-comments"></i> Room Name:</h3>
+          <h4 id="room-name"></h4>
+        <h3><i class="fas fa-users"></i> Users</h3>
+          <ul id="users"></ul>
+        <a id="leave-btn" class="btn">Leave Room</a>
+      </header>
+      <!-- <main class="chat-main">
+        <div class="chat-sidebar">
+          <h3><i class="fas fa-comments"></i> Room Name:</h3>
+          <h2 id="room-name"></h2>
+        </div>
+        <div class="chat-messages"></div>
+      </main> -->
+      <!-- <div class="chat-form-container">
+        <form id="chat-form">
+          <input
+            id="msg"
+            type="text"
+            placeholder="Enter Message"
+            required
+            autocomplete="off"
+          />
+          <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
+        </form>
+      </div> -->
+    </div>
+    <div class="combined">
+      <div class="copy">
+        <button class="toCopy">To Export</button>
+    </div>
+      <div class="toolBar">
+          <div class=" hamburger is-active" id="hamburger-1">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+          </div>
+          <div class="tool-panel add-animation">
+              <div class="tool active">
+                  <img src="NewIcons/Black_Pencil.svg" class="tool-img " id="pencil-img" alt=""
+                      onclick="handleLocaltoolChange('pencil')">
+                  <div class="tool-options pencil">
+                      <div class="pencil-size">
+                          <input type="range" id="pen-size" min="5" max="30" value="5"
+                              onchange="sizeChange(this.value)">
+                      </div>
+                      <div class="pencil-color">
+                          <div class="colors red" onclick="handleColorChange('red')"></div>
+                          <div class="colors green" onclick="handleColorChange('#55efc4')"></div>
+                          <div class="colors blue" onclick="handleColorChange('blue')"></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="tool eraser">
+                  <img src="NewIcons/Eraser.svg" alt="" class="tool-img" id="eraser-img"
+                      onclick="handleLocaltoolChange('eraser')">
+                  <div class="tool-options eraser">
+                      <div class="eraser-size">
+                          <input type="range" id="eraser-size" min="5" max=30 onchange="sizeChange(this.value)">
+                      </div>
+                  </div>
+              </div>
+              <div class="tool">
+                  <img src="NewIcons/StickyNote.svg" alt="" onclick="handleLocaltoolChange('sticky')" class="tool-img">
+              </div>
+              <div class="tool">
+                  <input type="file" name="" id="" class="input-img" accept="image/*">
+                  <img src="NewIcons/Photo.svg" alt="" class="upload-img tool-img"
+                      onclick="handleToolChange('upload')">
+              </div>
+              <div class="tool">
+                  <img src="./NewIcons/Download.svg" alt="" class="tool-img download-tool">
+              </div>
+              <div class="tool">
+                  <img src="./NewIcons/Undo.svg" alt="" class="tool-img" id="undo">
+              </div>
+              <div class="tool">
+                  <img src="./NewIcons/Redo.svg" alt="" class="tool-img" id="redo">
+              </div>
+              <div class="tool">
+                  <img src="./NewIcons/zoom_in.png" alt="" class="tool-img zoom-in">
+              </div>
+              <div class="tool">
+                  <img src="./NewIcons/zoom_out.png" alt="" class="tool-img zoom-out">
+              </div>
+          </div>
+      </div>
+      <!-- notes dom create -->
+      <canvas></canvas>
+  <script src="./js/script2.js"></script>
+  </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+      integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/script2.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/recieve.js"></script>
+    <script src="../utils/users.js"></script>
+  </body>
+</html>
